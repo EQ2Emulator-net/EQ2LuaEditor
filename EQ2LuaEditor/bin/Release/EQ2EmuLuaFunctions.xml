@@ -1,0 +1,2260 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EQ2EmuFunctions>
+  <Function Name="AddControlEffect">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Target</Param>
+    <Param Type="int8">Type</Param>
+    <Param Type="int8" Optional="True">OnlySpawn</Param>
+    <Description>Adds the control effect given by type to the spells targets or the given target spawn</Description>
+  </Function>
+
+  <Function Name="AddConversationOption">
+    <ReturnType>void</ReturnType>
+    <Param Type="Conversation">con</Param>
+    <Param Type="string">choice</Param>
+    <Param Type="string" Optional="True">function</Param>
+    <Description>Adds an option to the given conversation, function is the callback if this option is selected</Description>
+  </Function>
+
+  <Function Name="AddHate">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Attacker</Param>
+    <Param Type="Spawn">Target</Param>
+    <Param Type="sint32">Amount</Param>
+    <Param Type="int8" Optional="True">SendPacket</Param>
+    <Description>Adds The given amount of hate for the Attacker to the Target</Description>
+  </Function>
+
+  <Function Name="AddImmunitySpell">
+    <ReturnType>void</ReturnType>
+    <Param Type="int8">Type</Param>
+    <param Type="Spawn" Optional="True">Target</param>
+    <Description>Adds an immunity of the given type to the spells targets, or just the given target</Description>
+  </Function>
+  
+  <Function Name="AddLanguage">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Language ID</Param>
+    <Description>Adds the language to the player</Description>
+  </Function>
+  
+  <Function Name="AddLootCoin">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">NPC</Param>
+    <Param Type="int32">coins</Param>
+    <Description>Sets the given NPC's coin loot to the given value</Description>
+  </Function>
+
+  <Function Name="AddLootItem">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">NPC</Param>
+    <Param Type="int32">item_id</Param>
+    <Param Type="int16" Optional="True">quantity</Param>
+    <Description>Adds the given amount of the given item to the NPC's loot</Description>
+  </Function>
+  
+  <Function Name="AddMultiFloorLift">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Widget</Param>
+    <Description>Sets the widget as a multi floor lift</Description>
+  </Function>
+
+  <Function Name="AddOptionWindowOption">
+    <ReturnType>void</ReturnType>
+    <Param Type="OptionWindow">option</Param>
+    <Param Type="string">name</Param>
+    <Param Type="string">description</Param>
+    <Param Type="int32">icon_sheet</Param>
+    <Param Type="int16">icon_id</Param>
+    <Param Type="string">command</Param>
+    <Param Type="string">confirm</Param>
+    <Description>Adds an option to the option window</Description>
+  </Function>
+
+  <Function Name="AddPrimaryEntityCommand">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">player</Param>
+    <Param Type="Spawn">spawn</Param>
+    <Param Type="string">command</Param>
+    <Param Type="float" Optional="True">max_distance</Param>
+    <Param Type="string" Optional="True">command</Param>
+    <Param Type="string" Optional="True">error</Param>
+    <Param Type="int16" Optional="True">cast_time</Param>
+    <Param Type="int32" Optional="True">spell_vis</Param>
+    <Description>Adds an entity command to the given spawn for the given player</Description>
+  </Function>
+
+  <Function Name="AddProc">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Param Type="int8">type</Param>
+    <Param Type="float">chance</Param>
+    <Param Type="Item" Optional="True">item</Param>
+    <param Type="int8" Optional="True">UseSpellTargets</param>
+    <Description>Adds a proc to the given entity with the given chance to go off </Description>
+  </Function>
+
+  <Function Name="AddQuestPrereqClass">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int8">ClassID</Param>
+    <Description>Sets the given class as a prerequisite for the given quest</Description>
+  </Function>
+
+  <Function Name="AddQuestPrereqFaction">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">FactionID</Param>
+    <Param Type="sint32">Min</Param>
+    <Param Type="sint32">Max</Param>
+    <Description>Sets the given faction range as a prerequisite for the given quest</Description>
+  </Function>
+
+  <Function Name="AddQuestPrereqItem">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">ItemID</Param>
+    <Param Type="int8" Optional="True">Quantity</Param>
+    <Description>Sets the given item as a prerequisite for the given quest</Description>
+  </Function>
+
+  <Function Name="AddQuestPrereqModelType">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int16">ModelType</Param>
+    <Description>Sets the given model type as a prerequisite for the given quest</Description>
+  </Function>
+
+  <Function Name="AddQuestPrereqQuest">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">QuestID</Param>
+    <Description>Sets the given quest ID as a prerequisite for the given quest</Description>
+  </Function>
+
+  <Function Name="AddQuestPrereqRace">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int8">RaceID</Param>
+    <Description>Sets the given race as a prerequisite for the given quest</Description>
+  </Function>
+
+  <Function Name="AddQuestPrereqTradeskillClass">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int8">ClassID</Param>
+    <Description>Sets the given trade skill class as a prerequisite for the given quest</Description>
+  </Function>
+
+  <Function Name="AddQuestPrereqTradeskillLevel">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int8">Level</Param>
+    <Description>Sets the given trade skill level as a prerequisite for the given quest</Description>
+  </Function>
+
+  <Function Name="AddQuestRewardCoin">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">Copper</Param>
+    <Param Type="int32">Silver</Param>
+    <Param Type="int32">Gold</Param>
+    <Param Type="int32">Plat</Param>
+    <Description>Adds the given coins as a reward for the given quest</Description>
+  </Function>
+
+  <Function Name="AddQuestRewardFaction">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">FactionID</Param>
+    <Param Type="sint32">Amount</Param>
+    <Description>Adds the given amount of the given faction as a reward for the given quest</Description>
+  </Function>
+
+  <Function Name="AddQuestRewardItem">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">ItemID</Param>
+    <Param Type="int8" Optional="True">Quantity</Param>
+    <Description>Adds the given item as a reward for the given quest</Description>
+  </Function>
+
+  <Function Name="AddQuestSelectableRewardItem">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">ItemID</Param>
+    <Param Type="int8" Optional="True">Quantity</Param>
+    <Description>Adds the given item as a selectable reward for the given quest</Description>
+  </Function>
+
+  <Function Name="AddQuestStep">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">Step</Param>
+    <Param Type="string">Description</Param>
+    <Param Type="int32">Quantity</Param>
+    <Param Type="float">Percentage</Param>
+    <Param Type="string">Taskgroup</Param>
+    <Param Type="int16">Icon</Param>
+    <Description>Adds a step to the given quest</Description>
+  </Function>
+
+  <Function Name="AddQuestStepChat">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">Step</Param>
+    <Param Type="string">Description</Param>
+    <Param Type="int32">Quantity</Param>
+    <Param Type="string">Taskgroup</Param>
+    <Param Type="int16">Icon</Param>
+    <Param Type="int32">NPC_ID</Param>
+    <Description>Adds a chat step for the given NPC's (can provide more then one) to the given quest</Description>
+  </Function>
+
+  <Function Name="AddQuestStepCompleteAction">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">Step</Param>
+    <Param Type="string">Action</Param>
+    <Description>Sets a callback function for when the step is completed</Description>
+  </Function>
+
+  <Function Name="AddQuestStepCraft">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">Step</Param>
+    <Param Type="string">Description</Param>
+    <Param Type="int32">Quantity</Param>
+    <Param Type="float">Percentage</Param>
+    <Param Type="string">Taskgroup</Param>
+    <Param Type="int16">Icon</Param>
+    <Param Type="int32">ItemID</Param>
+    <Description>Adds a crafting step to the given quest, only crafting the given items (can provide more then one) will count</Description>
+  </Function>
+
+  <Function Name="AddQuestStepHarvest">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">Step</Param>
+    <Param Type="string">Description</Param>
+    <Param Type="int32">Quantity</Param>
+    <Param Type="float">Percentage</Param>
+    <Param Type="string">Taskgroup</Param>
+    <Param Type="int16">Icon</Param>
+    <Param Type="int32">ItemID</Param>
+    <Description>Adds a harvesting step to the given quest, can provide more then one item ID</Description>
+  </Function>
+
+  <Function Name="AddQuestStepKill">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">Step</Param>
+    <Param Type="string">Description</Param>
+    <Param Type="int32">Quantity</Param>
+    <Param Type="float">Percentage</Param>
+    <Param Type="string">Taskgroup</Param>
+    <Param Type="int16">Icon</Param>
+    <Param Type="int32">NPC_ID</Param>
+    <Description>Adds a kill step to the given quest, can provide more then one NPC ID</Description>
+  </Function>
+
+  <Function Name="AddQuestStepLocation">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">Step</Param>
+    <Param Type="string">Description</Param>
+    <Param Type="float">MaxVariation</Param>
+    <Param Type="string">Taskgroup</Param>
+    <Param Type="int16">Icon</Param>
+    <Param Type="float">X</Param>
+    <Param Type="float">Y</Param>
+    <Param Type="float">Z</Param>
+    <Description>Adds a location step to the given quest, can provide multiple x, y, z params</Description>
+  </Function>
+
+  <Function Name="AddQuestStepObtainItem">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">Step</Param>
+    <Param Type="string">Description</Param>
+    <Param Type="int32">Quantity</Param>
+    <Param Type="float">Percentage</Param>
+    <Param Type="string">Taskgroup</Param>
+    <Param Type="int16">Icon</Param>
+    <Param Type="int32">ItemID</Param>
+    <Description>Adds an obtain item step to the given quest, can provide multiple item IDs</Description>
+  </Function>
+
+  <Function Name="AddQuestStepProgressAction">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">Step</Param>
+    <Param Type="string">Action</Param>
+    <Description>Adds a call back function for when progress is made on the step</Description>
+  </Function>
+
+  <Function Name="AddQuestStepSpell">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">Step</Param>
+    <Param Type="string">Description</Param>
+    <Param Type="int32">Quantity</Param>
+    <Param Type="float">Percentage</Param>
+    <Param Type="string">Taskgroup</Param>
+    <Param Type="int16">Icon</Param>
+    <Param Type="int32">SpellID</Param>
+    <Description>Adds a spell step to the given quest, can provide multiple spell IDs</Description>
+  </Function>
+
+  <Function Name="AddSkillBonus">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="int32">SkillID</Param>
+    <Param Type="float">Value</Param>
+    <Description>Adds a skill bonus to the spells targets</Description>
+  </Function>
+
+  <Function Name="AddSpawnAccess">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">PrivateSpawn</Param>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Allows the given spawn to see the private spawn</Description>
+  </Function>
+
+  <Function Name="AddSpawnIDAccess">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="int32">SpawnID</Param>
+    <Param Type="Zone">Zone</Param>
+    <Description>Allows the spawn to see the private spawn in the given zone with the given ID</Description>
+  </Function>
+
+  <Function Name="AddSpawnSpellBonus">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="int16">Type</Param>
+    <Param Type="sint32">Value</Param>
+    <Description>Adds a bonus to the given spawn</Description>
+  </Function>
+  
+  <Function Name="AddSpellBonus">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="int16">Type</Param>
+    <Param Type="sint32">Value</Param>
+    <Description>Adds a bonus to the spells targets</Description>
+  </Function>
+
+  <Function Name="AddSpellBookEntry">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int16">SpellID</Param>
+    <Param Type="int16">Tier</Param>
+    <Description>Gives the spell to the player</Description>
+  </Function>
+
+  <Function Name="AddSpellTimer">
+    <ReturnType>void</ReturnType>
+    <Param Type="int32">Time</Param>
+    <Param Type="string">Callback</Param>
+    <Param Type="Spawn" Optional="True">Caster</Param>
+    <Param Type="Spawn" Optional="True">Target</Param>
+    <Description>Sets a callback function to trigger after the given time (in milliseconds)</Description>
+  </Function>
+
+  <Function Name="AddStepProgress">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">QuestID</Param>
+    <Param Type="int32">Step</Param>
+    <Param Type="int32">Progress</Param>
+    <Description>Adds progress to the given quest step for the given player</Description>
+  </Function>
+
+  <Function Name="AddThreatTransfer">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Caster</Param>
+    <Param Type="Spawn">Target</Param>
+    <Param Type="float">Chance</Param>
+    <Description>Adds a threat transfer on the target for the caster</Description>
+  </Function>
+
+  <Function Name="AddTimer">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Target</Param>
+    <Param Type="int32">Time</Param>
+    <Param Type="string">Callback</Param>
+    <Param Type="int32" Optional="True">Count</Param>
+    <Param Type="Spawn" Optional="True">Player</Param>
+    <Description>Adds a timer to the target spawn</Description>
+  </Function>
+
+  <Function Name="AddToWard">
+    <ReturnType>void</ReturnType>
+    <Param Type="int32">Amount</Param>
+    <Description>Adds the given amount to the ward, only usable in spell scripts</Description>
+  </Function>
+
+  <Function Name="AddTransportSpawn">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Sets the given spawn as a transport spawn</Description>
+  </Function>
+
+  <Function Name="AddWard">
+    <ReturnType>void</ReturnType>
+    <Param Type="int32">Amount</Param>
+    <Param Type="bool" Optional="True">Keep</Param>
+    <Param Type="int8" Optional="True">Ward Type</Param>
+    <Param Type="int8" Optional="True">Damage Types</Param>
+    <Description>Adds a ward with the given amount to the spells targets.  Allows you to set if the ward is to be kept after it is depleted (defulat is true), the type of ward, and if the type is magical the damage types to absorb.  Can only be used in spell scripts</Description>
+  </Function>
+
+  <Function Name="ApplySpellVisual">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="int32">Visual ID</Param>
+    <Description>Applys the spell visual to the given spawn</Description>
+  </Function>
+
+  <Function Name="Attack">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">NPC</Param>
+    <Param Type="Spawn">Player</Param>
+    <Description>Forces the NPC to attack the Player</Description>
+  </Function>
+
+  <Function Name="Bind">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Description>Sets the players bind location to their current location</Description>
+  </Function>
+  
+  <Function Name="BlurVision">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Target</Param>
+    <Param Type="float">Intensity</Param>
+    <Description>Blurs the vision of the spells targets or the provided target</Description>
+  </Function>
+  
+  <Function Name="BreatheUnderwater">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Target</Param>
+    <Param Type="bool">Value</Param>
+    <Description>Sets weather the spells targets, or provided target, can breathe underwater</Description>
+  </Function>
+
+  <Function Name="CancelSpell">
+    <ReturnType>void</ReturnType>
+    <Description>Cancels the spell, can only be used in a spell script</Description>
+  </Function>
+  
+  <Function Name="CanHarvest">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="Spawn">GroundSpawn</Param>
+    <Description>Checks to see if the player can harvest the ground spawn</Description>
+  </Function>
+
+  <Function Name="CanReceiveQuest">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Quest ID</Param>
+    <Description>Checks to see if the Player can get the quest</Description>
+  </Function>
+
+  <Function Name="CastEntityCommand">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="Spawn">Target</Param>
+    <Param Type="int32">Command ID</Param>
+    <Param Type="string">Command Name</Param>
+    <Description>Has the Player cast the given entity command on the provided target</Description>
+  </Function>
+
+  <Function Name="CastSpell">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Target</Param>
+    <Param Type="int32">Spell ID</Param>
+    <Param Type="int8">Spell Tier</Param>
+    <Param Type="Spawn" Optional="True">Caster</Param>
+    <Description>Caste the given spell on the target, if caster is left out then target will be the caster</Description>
+  </Function>
+
+  <Function Name="Charm">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Param Type="Spawn">NPC</Param>
+    <Description>Has the Entity charm the NPC, must be used in a spell script</Description>
+  </Function>
+
+  <Function Name="CheckRaceType">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="int16">Race ID</Param>
+    <Description>Checks to see if the given spawn is the race id</Description>
+  </Function>
+
+  <Function Name="ClearEncounter">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">NPC</Param>
+    <Description>Clears the encounter for the provided spawn</Description>
+  </Function>
+
+  <Function Name="ClearHate">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">NPC</Param>
+    <Param Type="Spawn" Optional="True">Spawn</Param>
+    <Description>Clears the hate list for the provided NPC, is a spawn is provided then only remove that spawn from the hate list</Description>
+  </Function>
+
+  <Function Name="CloseConversation">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="Spawn">Player</Param>
+    <Description>Closes the conversation between the Player and Spawn</Description>
+  </Function>
+  
+  <Function Name="CloseItemConversation">
+    <ReturnType>void</ReturnType>
+    <Param Type="Item">Item</Param>
+    <Param Type="Spawn">Player</Param>
+    <Description>Closes the conversation between the Player and Item</Description>
+  </Function>
+
+  <Function Name="CompareSpawns">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Compares the spawns to see if they are the same</Description>
+  </Function>
+
+  <Function Name="CopySpawnAppearance">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="Spawn">Copy Spawn</Param>
+    <Description>Sets the appearance of Spawn to that of Copy Spawn</Description>
+  </Function>
+
+  <Function Name="CreateConversation">
+    <ReturnType>Conversation</ReturnType>
+    <Description>Creates a conversation</Description>
+  </Function>
+
+  <Function Name="CreateOptionWindow">
+    <ReturnType>OptionWindow</ReturnType>
+    <Description>Creates an option window</Description>
+  </Function>
+
+  <Function Name="CureByControlEffect">
+    <ReturnType>void</ReturnType>
+    <Param Type="int8">Cure Count</Param>
+    <Param Type="int8">Cure Type</Param>
+    <Param Type="string">Cure Name</Param>
+    <Param Type="int8">Cure Level</Param>
+    <Param Type="Spawn" Optional="True">Target</Param>
+    <Description>Cures a detrimental effect by its control effect</Description>
+  </Function>
+
+  <Function Name="CureByType">
+    <ReturnType>void</ReturnType>
+    <Param Type="int8">Cure Count</Param>
+    <Param Type="int8">Cure Type</Param>
+    <Param Type="string">Cure Name</Param>
+    <Param Type="int8">Cure Level</Param>
+    <Param Type="Spawn" Optional="True"></Param>
+    <Description>Cures a detrimental effect by type</Description>
+  </Function>
+
+  <Function Name="Despawn">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="int32" Optional="True">Delay</Param>
+    <Description>Despawns the Spawn after the given delay</Description>
+  </Function>
+
+  <Function Name="DismissPet">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Pet</Param>
+    <Description>Dismisses the given pet</Description>
+  </Function>
+
+  <Function Name="Emote">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="string">Message</Param>
+    <Param Type="Spawn" Optional="True">Target</Param>
+    <Param Type="Player" Optional="True">Player</Param>
+    <Description>Has the spawn do a chat emote, if target is set it will be directed to them, if Player is set it will only be visible to that player</Description>
+  </Function>
+  
+  <Function Name="EndAutoMount">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Description>Ends the auto mount and allows the player to move again</Description>
+  </Function>
+
+  <Function Name="FaceTarget">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="Spawn">Target</Param>
+    <Description>Has the Spawn face the Target</Description>
+  </Function>
+
+  <Function Name="Gate">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Description>Sends the Player to their bind location</Description>
+  </Function>
+
+  <Function Name="GetAgi">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the agility of the Spawn</Description>
+  </Function>
+
+  <Function Name="GetAgiBase">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the base agility of the spawn</Description>
+  </Function>
+
+  <Function Name="GetArchetypeName">
+    <ReturnType>string</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the base class name of the Spawn</Description>
+  </Function>
+
+  <Function Name="GetCharmedPet">
+    <ReturnType>Spawn</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the pet of the provided Entity</Description>
+  </Function>
+
+  <Function Name="GetClass">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the ID for the class of the provided Spawn</Description>
+  </Function>
+
+  <Function Name="GetClassName">
+    <ReturnType>string</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the class name of the provided Spawn</Description>
+  </Function>
+
+  <Function Name="GetCoinMessage">
+    <ReturnType>string</ReturnType>
+    <Param Type="int32">Coins</Param>
+    <Description>Gets a message for how many plat/gold/silver/copper are in the total coins</Description>
+  </Function>
+
+  <Function Name="GetCosmeticPet">
+    <ReturnType>Spawn</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the cosmetic pet for the provided Entity</Description>
+  </Function>
+
+  <Function Name="GetCurrentZoneSafeLocation">
+    <ReturnType> float, float, float</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the safe location for the spawns current zone</Description>
+  </Function>
+
+  <Function Name="GetDeityPet">
+    <ReturnType>Spawn</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the deity pet for the Spawn</Description>
+  </Function>
+
+  <Function Name="GetDistance">
+    <ReturnType>float</ReturnType>
+    <Param Type="Spawn">Spawn1</Param>
+    <Param Type="Spawn">Spawn2</Param>
+    <Param Type="int8" Optional="True">include_radius</Param>
+    <Description>Gets the distance between two spawns, if third parameter is included it will take collison radius into account</Description>
+  </Function>
+
+  <Function Name="GetEncounter">
+    <ReturnType>Spawns[]</ReturnType>
+    <Param Type="Spawn">NPC</Param>
+    <Description>Gets an array of spawns currently in the NPC's encounter</Description>
+  </Function>
+
+  <Function Name="GetEncounterSize">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">NPC</Param>
+    <Description>Gets the number of spawns in the NPC's encounter</Description>
+  </Function>
+
+  <Function Name="GetEquippedItemByID">
+    <ReturnType>Item</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Item ID</Param>
+    <Description>Gets the Item that the player has equipped by the item id</Description>
+  </Function>
+
+  <Function Name="GetEquippedItemBySlot">
+    <ReturnType>Item</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int8">Slot</Param>
+    <Description>Gets the Item the Player currently has equipped in the given slot</Description>
+  </Function>
+
+  <Function Name="GetFactionAmount">
+    <ReturnType>Int32</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Faction ID</Param>
+    <Description>Gets the Players current standing with the given faction</Description>
+  </Function>
+
+  <Function Name="GetFollowTarget">
+    <ReturnType>Spawn</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the spawn that the provided Spawn is following</Description>
+  </Function>
+
+  <Function Name="GetGender">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the gender ID for the Spawn</Description>
+  </Function>
+
+  <Function Name="GetGroup">
+    <ReturnType>Spawn[]</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets an array of spawns that are in the group of the Spawn</Description>
+  </Function>
+
+  <Function Name="GetHateList">
+    <ReturnType>Spawn[]</ReturnType>
+    <Param Type="Spawn">NPC</Param>
+    <Description>Gets an array of spawns that are in the hate list of the NPC</Description>
+  </Function>
+
+  <Function Name="GetHeading">
+    <ReturnType>float</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the current heading of the spawn</Description>
+  </Function>
+
+  <Function Name="GetHP">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the current ho of the Spawn</Description>
+  </Function>
+
+  <Function Name="GetInt">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the current int of the Entity</Description>
+  </Function>
+
+  <Function Name="GetIntBase">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the base int of the Entity</Description>
+  </Function>
+
+  <Function Name="GetItemByID">
+    <ReturnType>Item</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Item ID</Param>
+    <Param Type="int8" Optional="True">Count</Param>
+    <Param Type="bool" Optional="True">Include Bank</Param>
+    <Description>Gets the Item from the Players inventory</Description>
+  </Function>
+  
+  <Function Name="GetItemCount">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Item">Item</Param>
+    <Description>Gets the stack size of the given Item</Description>
+  </Function>
+  
+  <Function Name="GetItemSkillReq">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Item">Item</Param>
+    <Param Type="int8">Type</Param>
+    <Description>Gets the skill req for the Item</Description>
+  </Function>
+
+  <Function Name="GetItemType">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Item">Item</Param>
+    <Description>Gets the item type for the Item</Description>
+  </Function>
+
+  <Function Name="GetLevel">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the level of the Spawn</Description>
+  </Function>
+
+  <Function Name="GetLootCoin">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the amount of coins that the Entity will drop as loot</Description>
+  </Function>
+
+  <Function Name="GetMaxHP">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn"></Param>
+    <Description>Gets the Spawn's current max hp</Description>
+  </Function>
+
+  <Function Name="GetMaxHPBase">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the Spawn's base max hp</Description>
+  </Function>
+
+  <Function Name="GetMaxPower">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the Spawn's current max power</Description>
+  </Function>
+
+  <Function Name="GetMaxPowerBase">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Get the Spawn's base max power</Description>
+  </Function>
+
+  <Function Name="GetModelType">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Get the Spawn's model ID</Description>
+  </Function>
+
+  <Function Name="GetMostHated">
+    <ReturnType>Spawn</ReturnType>
+    <Param Type="Spawn">NPC</Param>
+    <Description>Get the spawn that the NPC hates the most</Description>
+  </Function>
+
+  <Function Name="GetMount">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the model id of the Entity</Description>
+  </Function>
+
+  <Function Name="GetName">
+    <ReturnType>string</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the name of the Spawn</Description>
+  </Function>
+
+  <Function Name="GetOwner">
+    <ReturnType>Spawn</ReturnType>
+    <Param Type="Spawn">Pet</Param>
+    <Description>Gets the owner of the given Pet</Description>
+  </Function>
+
+  <Function Name="GetPet">
+    <ReturnType>Spawn</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the combat pet of the Entity</Description>
+  </Function>
+  
+  <Function Name="GetPlayerHistory">
+    <ReturnType>int32, int32</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Event ID</Param>
+    <Description>Gets the values for the player for the given event</Description>
+  </Function>
+
+  <Function Name="GetPower">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the current power of the spawn</Description>
+  </Function>
+
+  <Function Name="GetQuest">
+    <ReturnType>Quest</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Quest ID</Param>
+    <Description>Gets the quest from the Player</Description>
+  </Function>
+
+  <Function Name="GetQuestCompleteCount">
+    <ReturnType>int16</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">QuestID</Param>
+    <Description>Gets the number of times the quest has been completed</Description>
+  </Function>
+  
+  <Function Name="GetQuestFlags">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Description>Gets the custom flags for the quest</Description>
+  </Function>
+  
+  <Function Name="GetQuestStep">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Quest ID</Param>
+    <Description>Gets the current step of the quest that the Player is working on</Description>
+  </Function>
+
+  <Function Name="GetRace">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the race id of the Spawn</Description>
+  </Function>
+
+  <Function Name="GetRaceBaseType">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the base race id of the spawn</Description>
+  </Function>
+
+  <Function Name="GetRaceName">
+    <ReturnType>string</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the name of the Spawn's race</Description>
+  </Function>
+
+  <Function Name="GetRaceType">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the race type of the Spawn</Description>
+  </Function>
+
+  <Function Name="GetRunbackDistance">
+    <ReturnType>float</ReturnType>
+    <Param Type="Spawn">NPC</Param>
+    <Description>Gets the distance to the NPC's runback location</Description>
+  </Function>
+
+  <Function Name="GetServerVariable">
+    <ReturnType>String</ReturnType>
+    <Param Type="String">Name</Param>
+    <Description>Gets the value of the given server variable, returns "NULL" if variable is not found</Description>
+  </Function>
+  
+  <Function Name="GetSkill">
+    <ReturnType>Skill</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Param Type="string">Name</Param>
+    <Description>Gets the Entity's skill</Description>
+  </Function>
+  
+  <Function Name="GetSkillIDByName">
+    <ReturnType>int32</ReturnType>
+    <Param Type="string">Name</Param>
+    <Description>Gets the skill ID by name</Description>
+  </Function>
+
+  <Function Name="GetSkillMaxValue">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Skill">Skill</Param>
+    <Description>Gets the skill's max value</Description>
+  </Function>
+
+  <Function Name="GetSkillName">
+    <ReturnType>string</ReturnType>
+    <Param Type="Skill">Skill</Param>
+    <Description>Get the Skill's name</Description>
+  </Function>
+
+  <Function Name="GetSkillValue">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Skill">Skill</Param>
+    <Description>Gets the current value of the Skill</Description>
+  </Function>
+
+  <Function Name="GetSpawn">
+    <ReturnType>Spawn</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="int32">DB ID</Param>
+    <Description>Gets the spawn closest to Spawn with the DB ID</Description>
+  </Function>
+
+  <Function Name="GetSpawnByGroupID">
+    <ReturnType>Spawn</ReturnType>
+    <Param Type="Zone">Zone</Param>
+    <Param Type="int32">Group ID</Param>
+    <Description>Gets the spawn in the Zone with the provided Group ID</Description>
+  </Function>
+
+  <Function Name="GetSpawnByLocationID">
+    <ReturnType>Spawn</ReturnType>
+    <Param Type="Zone">Zone</Param>
+    <Param Type="int32">Location ID</Param>
+    <Description>Gets the spawn in the zone with the provided Location ID</Description>
+  </Function>
+
+  <Function Name="GetSpawnGroupID">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the spawn group id of the Spawn</Description>
+  </Function>
+
+  <Function Name="GetSpawnID">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the database ID of the Spawn</Description>
+  </Function>
+
+  <Function Name="GetSpawnLocationID">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the location id of the Spawn</Description>
+  </Function>
+
+  <Function Name="GetSpawnLocationPlacementID">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the location placement ID of the Spawn</Description>
+  </Function>
+
+  <Function Name="GetSpeed">
+    <ReturnType>float</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the current speed of the Spawn</Description>
+  </Function>
+  
+  <Function Name="GetSpellName">
+    <ReturnType>string</ReturnType>
+    <Description>Gets the name of the spell, must be used in a spell script</Description>
+  </Function>
+
+  <Function Name="GetSpellTriggerCount">
+    <ReturnType>int32</ReturnType>
+    <Description>Gets the current trigger count of the spell, must be used in a spell script</Description>
+  </Function>
+
+  <Function Name="GetSta">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the current sta for the Entity</Description>
+  </Function>
+
+  <Function Name="GetStaBase">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the base sta for the Entity</Description>
+  </Function>
+
+  <Function Name="GetStr">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the current str for the Entity</Description>
+  </Function>
+
+  <Function Name="GetStrBase">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the base str for the Entity</Description>
+  </Function>
+
+  <Function Name="GetTarget">
+    <ReturnType>Spawn</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the current target of the Entity</Description>
+  </Function>
+
+  <Function Name="GetTaskGroupStep">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Quest ID</Param>
+    <Description>Gets the task group step of the quest for the Player</Description>
+  </Function>
+
+  <Function Name="GetTempVariable">
+    <ReturnType>Spawn or Zone or Item or Quest or String</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="string">Variable</Param>
+    <Description>Gets the temp variable for the Spawn, can return different types so you must know what type is stored in the variable</Description>
+  </Function>
+
+  <Function Name="GetTradeskillClass">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the tradeskill class ID for the Spawn</Description>
+  </Function>
+
+  <Function Name="GetTradeskillClassName">
+    <ReturnType>string</ReturnType>
+    <Param Type="Gets the tradeskill class name"></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="GetTradeskillLevel">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the tradeskill level of the Spawn</Description>
+  </Function>
+
+  <Function Name="GetVariableValue">
+    <ReturnType>string</ReturnType>
+    <Param Type="string">Variable Name</Param>
+    <Description>Gets the value for the variable</Description>
+  </Function>
+  
+  <Function Name="GetWardAmountLeft">
+    <ReturnType>int32</ReturnType>
+    <Description>Gets the amount left on the ward, must be used in a spell script</Description>
+  </Function>
+
+  <Function Name="GetWis">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the current wis of the Entity</Description>
+  </Function>
+
+  <Function Name="GetWisBase">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Gets the base wis of the Entity</Description>
+  </Function>
+
+  <Function Name="GetX">
+    <ReturnType>float</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the spawns current X coordinate</Description>
+  </Function>
+
+  <Function Name="GetY">
+    <ReturnType>float</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the spawns current Y coordinate</Description>
+  </Function>
+
+  <Function Name="GetZ">
+    <ReturnType>float</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Gets the spawns current Z coordinate</Description>
+  </Function>
+
+  <Function Name="GetZone">
+    <ReturnType>Zone</ReturnType>
+    <Param Type="int32 or string or Spawn">Param</Param>
+    <Description>Gets the zone from the Param</Description>
+  </Function>
+
+  <Function Name="GetZoneID">
+    <ReturnType>int32</ReturnType>
+    <Param Type="Zone">Zone</Param>
+    <Description>Gets the ID of the Zone</Description>
+  </Function>
+
+  <Function Name="GetZoneName">
+    <ReturnType>string</ReturnType>
+    <Param Type="Zone">Zone</Param>
+    <Description>Gets the name of the Zone</Description>
+  </Function>
+
+  <Function Name="GiveLoot">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Coins</Param>
+    <Param Type="int32">Item ID</Param>
+    <Description>Opens a loot window between the Entity and the Player with the given items, can provide more then one item id</Description>
+  </Function>
+
+  <Function Name="GiveQuestItem">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="string">Description</Param>
+    <Param Type="int32">Item ID</Param>
+    <Description>Has the Quest open a reward window for the Player with the provided Description and Item</Description>
+  </Function>
+
+  <Function Name="GiveQuestReward">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="Spawn">Player</Param>
+    <Description>Has the Quest give the Player the rewards</Description>
+  </Function>
+
+  <Function Name="HandInCollections">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Description>Turns in the Player's completed collection quests</Description>
+  </Function>
+
+  <Function Name="Harvest">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="Spawn">Groundspawn</Param>
+    <Description>Has the Player harvet the Groundspawn</Description>
+  </Function>
+
+  <Function Name="HasCollectionsToHandIn">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Description>Checks if the Player has any completed collection quests ready to turn in</Description>
+  </Function>
+
+  <Function Name="HasCompletedQuest">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Quest ID</Param>
+    <Description>Checks if the Player has completed the quest</Description>
+  </Function>
+
+  <Function Name="HasFreeSlot">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Description>Checks if the Player has a free inventory slot</Description>
+  </Function>
+
+  <Function Name="HasGroup">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Checks to see if the Spawn is in a group, works for both player groups and spawn groups</Description>
+  </Function>
+
+  <Function Name="HasItem">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Item ID</Param>
+    <Param Type="bool" Optional="True">Check Bank</Param>
+    <Description>Checks if the Player has the Item</Description>
+  </Function>
+  
+  <Function Name="HasItemEquipped">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Item ID</Param>
+    <Description>Checks to see if the Player has the item equipped</Description>
+  </Function>
+  
+  <Function Name="HasLanguage">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Language ID</Param>
+    <Description>Checks to see if the given player has the given language</Description>
+  </Function>
+
+  <Function Name="HasMoved">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Checks to see if the Entity has moved</Description>
+  </Function>
+  
+  <Function Name="HasPendingLoot">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Param Type="Spawn">Player</Param>
+    <Description>Checks to see if there is pending loot between the Player and Entity</Description>
+  </Function>
+
+  <Function Name="HasPendingLootItem">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Item ID</Param>
+    <Description>Checks to see if the item is in the pending loot between the Player and Entity</Description>
+  </Function>
+
+  <Function Name="HasQuest">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Quest ID</Param>
+    <Description>Checks to see if the the Player has the quest</Description>
+  </Function>
+
+  <Function Name="HasRecipeBook">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Recipe ID</Param>
+    <Description>Checks to see if the Player has the recipe book for the Recipe ID</Description>
+  </Function>
+
+  <Function Name="HasRecovered">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">NPC</Param>
+    <Description>Checks to see if the NPC has recovered from casting</Description>
+  </Function>
+
+  <Function Name="HasSpellEffect">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Param Type="int32">Spell ID</Param>
+    <Param Type="int8" Optional="True">Tier</Param>
+    <Description>Checks to see if the spell is in the Entity's current effects list</Description>
+  </Function>
+
+  <Function Name="Interrupt">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Caster</Param>
+    <Param Type="Spawn" Optional="True">Target</Param>
+    <Description>Has the Caster interrupt the casting of the spells targets, or the provided target</Description>
+  </Function>
+
+  <Function Name="IsAlive">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Checks to see if the Spawn is alive</Description>
+  </Function>
+
+  <Function Name="IsBehind">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Checks to see if the Entity is behind the Spawn</Description>
+  </Function>
+
+  <Function Name="IsBindAllowed">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Description>Checks to see if bind is allowed for the Player</Description>
+  </Function>
+
+  <Function Name="IsCasting">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Checks to see if the Entity is casting</Description>
+  </Function>
+  
+  <Function Name="IsEpic">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Checks to see if the Spawn is epic</Description>
+  </Function>
+
+  <Function Name="IsFlanking">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Checks to see if the Entity is flanking the spawn</Description>
+  </Function>
+  
+  <Function Name="IsFollowing">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Checks to see if the spawn is currently following another spawn</Description>
+  </Function>
+  
+  <Function Name="IsGateAllowed">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Description>Checks to see if the Player is allowed to gate</Description>
+  </Function>
+  
+  <Function Name="IsGroundSpawn">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Checks to see if the Spawn is a groundspawn</Description>
+  </Function>
+  
+  <Function Name="IsHeroic">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Checks to see if the Spawn is heroic</Description>
+  </Function>
+  
+  <Function Name="IsInCombat">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Checks to see if the Entity is in combat</Description>
+  </Function>
+  
+  <Function Name="IsInvis">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Checks to see if the Entity is invisible</Description>
+  </Function>
+  
+  <Function Name="IsMezzed">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Checks to see if the Entity is mezzed</Description>
+  </Function>
+  
+  <Function Name="IsMezzedOrStunned">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Checks to see if the Entity is mezzed or stunned</Description>
+  </Function>
+  
+  <Function Name="IsNight">
+    <ReturnType>bool</ReturnType>
+    <Param Type="zone">Zone</Param>
+    <Description>Gets if it is currently night time</Description>
+  </Function>
+  
+  <Function Name="IsOnAutoMount">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn"></Param>
+    <Description>Gets if the player is currently on an auto mount</Description>
+  </Function>
+  
+  <Function Name="IsPet">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Checks to see if the Spawn is a pet</Description>
+  </Function>
+  
+  <Function Name="IsPlayer">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Description>Checks to see if the Spawn is a player</Description>
+  </Function>
+  
+  <Function Name="IsStealthed">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Checks to see if the Entity is stealthed</Description>
+  </Function>
+  
+  <Function Name="IsStunned">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Entity</Param>
+    <Description>Checks to see if the Entity is stunned</Description>
+  </Function>
+
+  <Function Name="KillSpawn">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="Spawn">Killer</Param>
+    <Param Type="int8">Send Packet</Param>
+    <Description>Has the Killer kill the Spawn</Description>
+  </Function>
+
+  <Function Name="KillSpawnByDistance">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="float">Distance</Param>
+    <Param Type="bool">Include Players</Param>
+    <Param Type="bool">Send Packet</Param>
+    <Description>Has the Spawn kill all spawns, and optionally players, within the given distance</Description>
+  </Function>
+  
+  <Function Name="Knockback">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Target</Param>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="int32">Duration</Param>
+    <Param Type="float">Vertical</Param>
+    <Param Type="float">Horizontal</Param>
+    <Param Type="bool">Use Heading</Param>
+    <Description>Has Target knockback Spawn</Description>
+  </Function>
+  
+  <Function Name="LastSpellAttackHit">
+    <ReturnType>bool</ReturnType>
+    <Description>Checks if this spell last attack hit, must be used in a spell script</Description>
+  </Function>
+
+  <Function Name="ModifyHP">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="sint32">Value</Param>
+    <Description>Changes the Spawn's hp by Value</Description>
+  </Function>
+
+  <Function Name="ModifyPower">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="sint32">Value</Param>
+    <Description>Changes the Spawn's power by Value</Description>
+  </Function>
+
+  <Function Name="MovementLoopAddLocation">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="float">X</Param>
+    <Param Type="float">Y</Param>
+    <Param Type="float">Z</Param>
+    <Param Type="float">Speed</Param>
+    <Param Type="int32" Optional="True">Delay</Param>
+    <Param Type="string" Optional="True">Function</Param>
+    <Description>Adds a movement loop location to the spawn with optional delay and call back function</Description>
+  </Function>
+
+  <Function Name="MoveToLocation">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="float">X</Param>
+    <Param Type="float">Y</Param>
+    <Param Type="float">Z</Param>
+    <Param Type="float" Optional="True">Speed</Param>
+    <Param Type="string" Optional="True">Function</Param>
+    <Description>Moves the spawn to the location with optional speed and callback function</Description>
+  </Function>
+
+  <Function Name="OfferQuest">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">NPC</Param>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Quest ID</Param>
+    <Description>Has the NPC offer the quest to the Player</Description>
+  </Function>
+
+  <Function Name="PlayAnimation">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="int32">Animation</Param>
+    <Param Type="Spawn" Optional="True">Target</Param>
+    <Param Type="int8" Optional="True">Type</Param>
+    <Description>Has the Spawn play the animation</Description>
+  </Function>
+
+  <Function Name="PlayFlavor">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="string">MP3</Param>
+    <Param Type="string">Text</Param>
+    <Param Type="string">Emote</Param>
+    <Param Type="int32">Key1</Param>
+    <Param Type="int32">Key2</Param>
+    <Param Type="Spawn" Optional="True">Player</Param>
+    <Description>Plays a voice file for the Spawn, displays text, and does an emote</Description>
+  </Function>
+
+  <Function Name="PlaySound">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="string">Sound</Param>
+    <Param Type="float">X</Param>
+    <Param Type="float">Y</Param>
+    <Param Type="float">Z</Param>
+    <Param Type="Spawn" Optional="True">Player</Param>
+    <Description>Plays a sound file in Spawn's zone</Description>
+  </Function>
+
+  <Function Name="PlayVoice">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="string">MP3</Param>
+    <Param Type="int32">Key1</Param>
+    <Param Type="int32">Key2</Param>
+    <Param Type="Spawn" Optional="True">Player</Param>
+    <Description>Plays a voice file for the Spawn</Description>
+  </Function>
+  
+  <Function Name="ProcDamage">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Caster</Param>
+    <Param Type="Spawn">Target</Param>
+    <Param Type="string">Name</Param>
+    <Param Type="int8">Dmg Type</Param>
+    <Param Type="int32">Min Dmg</Param>
+    <Param Type="int32" Optional="True">Max Dmg</Param>
+    <Param Type="string" Optional="True">SuccessMsg</Param>
+    <Param Type="string" Optional="True">EffectMsg</Param>
+    <Description>Do proc damage to the target</Description>
+  </Function>
+
+  <Function Name="ProcessMelee">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">NPC</Param>
+    <Param Type="Spawn">Entity</Param>
+    <Param Type="float">Distance</Param>
+    <Description>Has the NPC attempt a melee attack on the Entity</Description>
+  </Function>
+
+  <Function Name="ProcessSpell">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">NPC</Param>
+    <Param Type="Spawn">Entity</Param>
+    <Param Type="float">Distance</Param>
+    <Description>Has the NPC attempt to cast a spell on the Entity</Description>
+  </Function>
+
+  <Function Name="ProvidesQuest">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Spawn</Param>
+    <Param Type="int32">Quest ID</Param>
+    <Description>Sets the Spawn as a quest giver for the quest</Description>
+  </Function>
+
+  <Function Name="QuestIsComplete">
+    <ReturnType>bool</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Quest ID</Param>
+    <Description>Checks to see if the quest is complete and ready for turn in</Description>
+  </Function>
+
+  <Function Name="QuestReturnNPC">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">Spawn ID</Param>
+    <Description>Sets the spawn as the quest turn in spawn</Description>
+  </Function>
+
+  <Function Name="QuestStepIsComplete">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RegisterQuest">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RemoveControlEffect">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RemoveImmunitySpell">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RemoveInvis">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RemoveItem">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RemoveLootItem">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RemoveProc">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RemoveSkillBonus">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RemoveSpawnAccess">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RemoveSpawnIDAccess">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RemoveSpellBonus">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RemoveStealth">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RemoveThreatTransfer">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RemoveTriggerFromSpell">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="RemoveWard">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+  
+  <Function Name="ResetIllusion">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+  
+  <Function Name="Resurrect">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="Runback">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="Say">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SayOOC">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SendMessage">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SendOptionWindow">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SendPopUpMessage">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetAdventureClass">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetAgi">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetAgiBase">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetBrainTick">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetCompletedDescription">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetCompleteFlag">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetFailureTimer">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetFollowTarget">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetHeading">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetHP">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+  
+  <Function Name="SetIllusion">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetInCombat">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetInt">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetIntBase">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+  
+  <Function Name="SetItemCount">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetLocationProximityFunction">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetLootCoin">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetLuaBrain">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetMaxHP">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetMaxHPBase">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetMaxPower">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetMaxPowerBase">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetModelType">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetMount">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetMountColor">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+  
+  <Function Name="SetPlayerHistory">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Event ID</Param>
+    <Param Type="int32">Value 1</Param>
+    <Param Type="int32" Optional="True">Value 2</Param>
+    <Description>Sets the values for the player for the given event</Description>
+  </Function>
+
+  <Function Name="SetPlayerProximityFunction">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetPosition">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetPower">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetQuestCompleteAction">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetQuestFeatherColor">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int8">Color</Param>
+    <Description>Sets the color of the quest feather</Description>
+  </Function>
+
+  <Function Name="SetQuestFlags">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Param Type="int32">Flags</Param>
+    <Description>Sets the custom flags for the quest</Description>
+  </Function>
+            
+  <Function Name="SetQuestPrereqLevel">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetQuestRepeatable">
+    <ReturnType>void</ReturnType>
+    <Param Type="Quest">Quest</Param>
+    <Description>Sets the quest as repeatable</Description>
+  </Function>
+  
+  <Function Name="SetQuestRewardComment">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetQuestRewardExp">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetQuestRewardStatus">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetQuestYellow">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetRequiredQuest">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetServerControlFlag">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetServerVariable">
+    <ReturnType>void</ReturnType>
+    <Param Type="String">Name</Param>
+    <Param Type="String">Value</Param>
+    <Param Type="String" Optional="True">Comment</Param>
+    <Description>Sets the given server variable to the given value, sets the comment if it is a new variable</Description>
+  </Function>
+
+  <Function Name="SetSkillMaxValue">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetSkillValue">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetSpeed">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+  
+  <Function Name="SetSpeedMultiplier">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetSpellList">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetSpellSnareValue">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetSpellTriggerCount">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetSta">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetStaBase">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetStepComplete">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetStr">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetStrBase">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetSuccessTimer">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetTarget">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetTempVariable">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetTradeskillClass">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetTradeskillLevel">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+  
+  <Function Name="SetVision">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetWis">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SetWisBase">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="Shout">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SpawnByLocationID">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SpawnMob">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SpawnMove">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SpawnSet">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SpawnSetByDistance">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SpellDamage">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SpellHeal">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+  
+  <Function Name="StartAutoMount">
+    <ReturnType>void</ReturnType>
+    <Param Type="Spawn">Player</Param>
+    <Param Type="int32">Path ID</Param>
+    <Description>Starts the player on an auto mount for the provided route</Description>
+  </Function>
+
+  <Function Name="StartConversation">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="StartDialogConversation">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="StartHeroicOpportunity">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="Stealth">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SummonCosmeticPet">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SummonDeityPet">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+  
+  <Function Name="SummonDumbFirePet">
+    <ReturnType>Spawn</ReturnType>
+    <Param Type="Spawn">Caster</Param>
+    <Param Type="Spawn">Target</Param>
+    <Param Type="int32">SpawnID</Param>
+    <Param Type="float" Optional="True">X</Param>
+    <Param Type="float" Optional="True">Y</Param>
+    <Param Type="float" Optional="True">Z</Param>
+    <Description>Summons a limited combat pet</Description>
+  </Function>
+
+  <Function Name="SummonItem">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="SummonPet">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="ToggleFollow">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="ToggleTracking">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="UpdateQuestDescription">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="UpdateQuestStepDescription">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="UpdateQuestTaskGroupDescription">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="UpdateQuestZone">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="UseWidget">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+
+  <Function Name="Zone">
+    <ReturnType></ReturnType>
+    <Param Type=""></Param>
+    <Description></Description>
+  </Function>
+</EQ2EmuFunctions>
